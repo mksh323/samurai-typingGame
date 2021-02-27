@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #wrap {
+        width: 800px;
+        margin: auto;
+      }
+      .list {
+        width: 20%;
+        padding: 10px 30px;
+        margin: 30px 10px;
+        list-style-type: circle;
+        font-weight: bold;
+        line-height: 2;
+        border: 1px solid #aaa;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+   </script>
+</head>
+<body
+    <div id="wrap">
+      <div id="title">
+        <h1 style="display:none;">サンプルタイトル</h1>
+        <time>2020-04-06</time>
+      </div>
+      <p>テキストテキストテキストテキストテキストテキストテキストテキスト</p>
+      <p>テキストテキストテキストテキスト</p>
+      <ul>
+        <li>テスト項目1</li>
+        <li>テスト項目2</li>
+        <li id="line">テスト項目3</li>
+      </ul>
+    </div>
+    <button>クリック</button>
+    <script>
+        $('#title').css('margin-bottom', '50px');
+       $('h1').css('text-align', 'center');
+       $('ul').addClass('list');
+       $('time').css({
+           'padding':'5px 10px',
+           'background-color':'#666',
+           'color':'#fff'
+       });
+       $('h1').show();
+       let flag=0;
+       $('button').on('click', () => {
+           if(flag==1){
+                $('#line').text('クリックされました！');
+                flag=0;
+           }else if(flag==0){
+                $('#line').text('テスト項目３');
+                flag=1;
+           }
+       })
+    </script>
+</body>
+</html>
